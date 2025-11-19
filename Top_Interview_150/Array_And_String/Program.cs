@@ -6,7 +6,6 @@ void MergeSortedArray(int[] nums1, int m, int[] nums2, int n)
     int p1 = m - 1; // end of nums1
     int p2 = n - 1; // end of nums2
     int i = nums1.Length - 1; // end of entire array
-
     // while nums2 has not been fully added to nums1
     while(p2 >= 0)
     {
@@ -21,4 +20,23 @@ void MergeSortedArray(int[] nums1, int m, int[] nums2, int n)
             nums1[i--] = nums2[p2--];
         }
     }
+}
+
+// solution for removing element val from array
+int RemoveElement(int[] nums, int val) 
+{
+    // count & pointer
+    int count = 0;
+    int p1 = 0;
+    for(int i = 0; i < nums.Length; i++)
+    {
+        // if val keep pointer there until not val then copy to pointer
+        if(nums[i] != val)
+        {
+            // pointer increments after new assignment
+            nums[p1++] = nums[i];
+            count++;
+        }
+    }
+    return count;
 }
