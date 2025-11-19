@@ -49,9 +49,28 @@ int RemoveDuplicatesSortedArray(int[] nums)
     {
         if(nums[i] != nums[j])
         {
-            i++;
-            nums[i] = nums[j];
+            nums[++i] = nums[j];
         }
     }
     return i + 1;
+}
+
+// solution for majority element
+// if val in array occours more than target return val
+int MajorityElement(int[] nums) 
+{
+    int target = nums.Length / 2;
+    int count = 0;
+    // go through every element
+    for(int i = 0; i < nums.Length; i++)
+    {
+        // count each element starting from back to front
+        for(int j = nums.Length - 1; j >= 0; j--)
+        {
+            if(nums[i] == nums[j]) count++;
+        }
+        if(count > target) return nums[i];
+        count = 0;
+    }
+    return 0;
 }
