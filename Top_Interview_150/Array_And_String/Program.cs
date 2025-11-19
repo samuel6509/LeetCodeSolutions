@@ -94,3 +94,17 @@ int MaxProfit(int[] prices)
     if(profit < 1) return 0;
     return profit;
 }
+
+// solution for length of last word
+// could use for loop from end of array 
+int LengthOfLastWord(string s) 
+{
+    string[] words = s.Split(" ");
+    int answer = 0;
+    foreach(string word in words)
+    {
+        if(word.Length == 0) continue;
+        answer = word.Length;
+    }
+    return answer;
+}
