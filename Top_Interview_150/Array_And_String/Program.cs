@@ -135,3 +135,21 @@ int RomanToInt(string s)
     }
     return answer;
 }
+
+// solution for longest common prefix
+// start with first char as current
+// if all char at current pos in strings is same add to prefix
+// else return prefix
+string LongestCommonPrefix(string[] strs) 
+{
+    string prefix = "";
+    foreach(string s in strs) if(s.Length <= 0) return prefix; // end before its begun
+    char current = strs[0][0];
+    for(int i = 0; i < strs[0].Length; i++)
+    {
+        current = strs[0][i];
+        foreach(string s in strs) if(i >= s.Length || s[i] != current) return prefix;
+        prefix += current;
+    }
+    return prefix;
+}
