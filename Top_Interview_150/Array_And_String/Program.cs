@@ -108,3 +108,30 @@ int LengthOfLastWord(string s)
     }
     return answer;
 }
+
+// solution for converting roman to intiger
+int RomanToInt(string s) 
+{
+    // mapping all possible chars with the val
+    Dictionary<char, int> dict = new Dictionary<char, int>
+    {
+        {'I', 1},
+        {'V', 5},
+        {'X', 10},
+        {'L', 50},
+        {'C', 100},
+        {'D', 500},
+        {'M', 1000}
+    };
+    int answer = 0;
+    int current = 0;
+    int previous = 0;
+    for(int i = s.Length - 1; i >= 0; i--)
+    {
+        current = dict[s[i]];
+        if(current < previous) answer -= current;
+        else answer += current;
+        previous = current;
+    }
+    return answer;
+}
