@@ -101,11 +101,7 @@ int LengthOfLastWord(string s)
 {
     string[] words = s.Split(" ");
     int answer = 0;
-    foreach(string word in words)
-    {
-        if(word.Length == 0) continue;
-        answer = word.Length;
-    }
+    foreach(string word in words) if(word.Length != 0) answer = word.Length;
     return answer;
 }
 
