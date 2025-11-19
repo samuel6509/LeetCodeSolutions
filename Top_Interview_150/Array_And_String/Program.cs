@@ -74,3 +74,23 @@ int MajorityElement(int[] nums)
     }
     return 0;
 }
+
+// solution for best time to buy and sell stock
+int MaxProfit(int[] prices) 
+{
+    int buy = prices[0];
+    int profit = 0;
+    for(int i = 1; i < prices.Length; i++)
+    {
+        // new lowest buy
+        if(prices[i] < buy)
+        {
+            buy = prices[i]; 
+            continue; // cant sell on same day
+        }
+        // if selling on this day gives bigger profit
+        if(prices[i] - buy > profit) profit = prices[i] - buy;
+    }
+    if(profit < 1) return 0;
+    return profit;
+}
