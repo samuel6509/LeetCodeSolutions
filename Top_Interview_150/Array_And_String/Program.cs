@@ -40,3 +40,18 @@ int RemoveElement(int[] nums, int val)
     }
     return count;
 }
+
+// solution for removing duplicates from sorted array
+int RemoveDuplicatesSortedArray(int[] nums) 
+{
+    int i = 0;
+    for(int j = 1; j < nums.Length; j++)
+    {
+        if(nums[i] != nums[j])
+        {
+            i++;
+            nums[i] = nums[j];
+        }
+    }
+    return i + 1;
+}
