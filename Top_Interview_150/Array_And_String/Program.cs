@@ -139,7 +139,8 @@ string LongestCommonPrefix(string[] strs)
 }
 
 // solution for Find the Index of the First Occurrence in a String
-int StrStr(string haystack, string needle) {
+int StrStr(string haystack, string needle) 
+{
     int p1 = 0;
     for(int i = 0; i < haystack.Length; i++)
     {
@@ -159,4 +160,22 @@ int StrStr(string haystack, string needle) {
         }
     }
     return -1;
+}
+
+// solution for is palindrome
+bool IsPalindrome(string s) 
+{
+    int left = 0;
+    int right = s.Length - 1;
+    while(left < right)
+    {
+        // move left & right until its a char 
+        while(left < right && !char.IsLetterOrDigit(s[left])) left++;
+        while(left < right && !char.IsLetterOrDigit(s[right])) right--;
+        // if not the same false
+        if(char.ToLower(s[left]) != char.ToLower(s[right])) return false;
+        left++;
+        right--;
+    }
+    return true;
 }
