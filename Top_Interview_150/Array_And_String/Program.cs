@@ -1,5 +1,6 @@
 ﻿// leetcode solutions for top 150 interview array & strings
 
+// EASY
 // solution for merging 2 sorted arrays
 void MergeSortedArray(int[] nums1, int m, int[] nums2, int n) 
 {
@@ -16,6 +17,7 @@ void MergeSortedArray(int[] nums1, int m, int[] nums2, int n)
     }
 }
 
+// EASY
 // solution for removing element val from array
 int RemoveElement(int[] nums, int val) 
 {
@@ -35,6 +37,7 @@ int RemoveElement(int[] nums, int val)
     return count;
 }
 
+// EASY
 // solution for removing duplicates from sorted array
 int RemoveDuplicatesSortedArray(int[] nums) 
 {
@@ -46,6 +49,7 @@ int RemoveDuplicatesSortedArray(int[] nums)
     return i + 1;
 }
 
+// EASY
 // solution for majority element
 // if val in array occours more than target return val
 int MajorityElement(int[] nums) 
@@ -63,6 +67,7 @@ int MajorityElement(int[] nums)
     return 0;
 }
 
+// EASY
 // solution for best time to buy and sell stock
 int MaxProfit(int[] prices) 
 {
@@ -83,6 +88,7 @@ int MaxProfit(int[] prices)
     return profit;
 }
 
+// EASY
 // solution for length of last word
 // could use for loop from end of array 
 int LengthOfLastWord(string s) 
@@ -93,6 +99,7 @@ int LengthOfLastWord(string s)
     return answer;
 }
 
+// EASY
 // solution for converting roman to intiger
 int RomanToInt(string s) 
 {
@@ -120,6 +127,7 @@ int RomanToInt(string s)
     return answer;
 }
 
+// EASY
 // solution for longest common prefix
 // start with first char as current
 // if all char at current pos in strings is same add to prefix
@@ -138,6 +146,7 @@ string LongestCommonPrefix(string[] strs)
     return prefix;
 }
 
+// EASY
 // solution for Find the Index of the First Occurrence in a String
 int StrStr(string haystack, string needle) 
 {
@@ -162,6 +171,7 @@ int StrStr(string haystack, string needle)
     return -1;
 }
 
+// EASY
 // solution for is palindrome
 bool IsPalindrome(string s) 
 {
@@ -180,6 +190,7 @@ bool IsPalindrome(string s)
     return true;
 }
 
+// EASY
 // solution for is subsequence 
 // is s in t 
 // s chars do not have to be next to eacher just in order
