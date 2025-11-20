@@ -179,3 +179,24 @@ bool IsPalindrome(string s)
     }
     return true;
 }
+
+// solution for is subsequence 
+// is s in t 
+// s chars do not have to be next to eacher just in order
+bool IsSubsequence(string s, string t) {
+    int p1 = 0;
+    int p2 = 0;
+    // while s has not been found
+    while(p1 < s.Length)
+    {
+        // while t has not been finished and s & t != eachother rn
+        while(p2 < t.Length && s[p1] != t[p2]) p2++;
+        if(p2 == t.Length) return false;
+        if(s[p1] == t[p2])
+        {
+            p1++;
+            p2++;
+        }
+    }
+    return true;
+}
