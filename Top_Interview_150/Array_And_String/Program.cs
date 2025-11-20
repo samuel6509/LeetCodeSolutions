@@ -11,14 +11,8 @@ void MergeSortedArray(int[] nums1, int m, int[] nums2, int n)
     {
         // if pointers pointing to a value 
         // if pointer 1 val greater than pointer 2 val
-        if(p1 >= 0 && nums1[p1] > nums2[p2])
-        {
-            nums1[i--] = nums1[p1--];
-        }
-        else
-        {
-            nums1[i--] = nums2[p2--];
-        }
+        if(p1 >= 0 && nums1[p1] > nums2[p2]) nums1[i--] = nums1[p1--];
+        else nums1[i--] = nums2[p2--];
     }
 }
 
@@ -47,10 +41,7 @@ int RemoveDuplicatesSortedArray(int[] nums)
     int i = 0;
     for(int j = 1; j < nums.Length; j++)
     {
-        if(nums[i] != nums[j])
-        {
-            nums[++i] = nums[j];
-        }
+        if(nums[i] != nums[j]) nums[++i] = nums[j];
     }
     return i + 1;
 }
@@ -65,10 +56,7 @@ int MajorityElement(int[] nums)
     for(int i = 0; i < nums.Length; i++)
     {
         // count each element starting from back to front
-        for(int j = nums.Length - 1; j >= 0; j--)
-        {
-            if(nums[i] == nums[j]) count++;
-        }
+        for(int j = nums.Length - 1; j >= 0; j--) if(nums[i] == nums[j]) count++;
         if(count > target) return nums[i];
         count = 0;
     }
