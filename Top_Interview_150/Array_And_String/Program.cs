@@ -137,3 +137,26 @@ string LongestCommonPrefix(string[] strs)
     }
     return prefix;
 }
+
+// solution for Find the Index of the First Occurrence in a String
+int StrStr(string haystack, string needle) {
+    int p1 = 0;
+    for(int i = 0; i < haystack.Length; i++)
+    {
+        // if first chars match check the rest
+        if(haystack[i] == needle[0])
+        {
+            p1 = i;
+            // if index is going out of range return wrong
+            // if current chars dont match break
+            // if j == needle length - 1 return answer
+            for(int j = 0; j < needle.Length; j++, p1++)
+            {
+                if(p1 >= haystack.Length) return -1;
+                if(haystack[p1] != needle[j]) break;
+                if(j == needle.Length - 1) return i;
+            }
+        }
+    }
+    return -1;
+}
