@@ -49,6 +49,23 @@ int RemoveDuplicatesSortedArray(int[] nums)
     return i + 1;
 }
 
+// MEDIUM
+// solution for removing duplicates only once it appeared more than 2 times
+int RemoveDuplicates(int[] nums) 
+{
+    int i = 0;
+    int count = 1;
+    for(int j = 1; j < nums.Length; j++)
+    {
+        if(nums[j] == nums[j - 1]) count++;
+        else count = 1;
+        // overrite when appearing less than 3 times
+        // leave pointer on third appearance
+        if(count <= 2) nums[++i] = nums[j];
+    }
+    return i + 1;
+}
+
 // EASY
 // solution for majority element
 // if val in array occours more than target return val
