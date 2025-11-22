@@ -228,3 +228,16 @@ bool IsSubsequence(string s, string t) {
     }
     return true;
 }
+
+// solution for twosum
+int[] TwoSum(int[] nums, int target) {
+    Dictionary<int, int>dict = new Dictionary<int, int>();
+    int required = 0;
+    for(int i = 0; i < nums.Length; i++)
+    {
+        required = target - nums[i];
+        if(dict.ContainsKey(required)) return new int[] {dict[required], i};
+        if(!dict.ContainsKey(nums[i])) dict.Add(nums[i], i);
+    }
+    return [];
+}
